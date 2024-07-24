@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- google font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <!-- font aswesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- tailwindcss  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+
+        }
+      }
+    }
+  </script>
+</head>
+
+<body style=" font-family: Manrope, sans-serif;" id="body">
+  <div class="grid grid-cols-12 gap-4 p-3">
+    <!-- aside part  -->
+    <div class="bg-[#FAFAFA] rounded col-span-2 max-lg:col-span-3">
+      <div class="flex justify-center mt-5 max-sm:hidden">
+        <img src="./assest/Logo.svg" style="width: 55%;" alt="">
+      </div>
+
+      <div
+        class="p-3 mt-4 mx-3 flex flex-col gap-3 max-xl:mx-0 max-xl:text-sm max-lg:text-xs max-md:text-[10px] max-sm:hidden" id="aside">
+        <a href=""
+          class=" text-slate-100 flex gap-4 items-center justify-start px-5 py-3 bg-[#FF8200] rounded-lg hover:bg-[#E55E00] transition-all"><img
+            src="./assest/SquaresFour.svg" class="w-6  rounded" alt=""> Dashboard</a>
+
+        <a href="" class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/ShoppingCart.svg" alt="" class="w-6"> Orders</a>
+
+        <a href="" class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/Icon/Package.svg" alt="" class="w-6"> Products</a>
+
+        <a href="" class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/Users.svg" alt="" class="w-6"> Customers</a>
+
+        <a href="" class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/Icon/FileText.svg" alt="" class="w-6"> Reports</a>
+
+        <a href="" class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/Icon/Package.svg" alt="" class="w-6"> Discounts</a>
+
+        <div class="border-t-2 border-slate-300"></div>
+
+        <a href="" class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/Icon/Percent.svg" alt="" class="w-6"> Integrations</a>
+
+        <a href="" class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/Icon/GearSix.svg" alt="" class="w-6"> Settings</a>
+      </div>
+
+      <div class="mx-3 p-3 bg-[#FAFAFA] rounded flex items-center gap-3 max-sm:hidden">
+        <span class="ml-3 text-sm font-medium text-slate-700">Theme Mode</span>
+
+        <label class="inline-flex items-center cursor-pointer">
+          <input type="checkbox" value="" class="sr-only peer" onclick="darkMode()">
+          <div
+            class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+          </div>
+        </label>
+
+      </div>
+
+      <div class="p-3 mt-4 mx-2 max-xl:p-0 max-sm:hidden">
+        <div class="p-3 bg-[#FFA547] rounded-lg flex flex-col gap-3 max-xl:mx-0 max-xl:text-sm">
+          <h1 class="text-slate-100 font-bold text-3xl max-xl:text-xl">Version 4.5
+            <br>
+            is Ready
+          </h1>
+          <ul class="list-none">
+            <li class="flex gap-3 items-center text-slate-100 max-xl:text-[10px]"><img src="./assest/Check.svg"
+                class="w-4" alt=""> User friendly UI</li>
+            <li class="flex gap-3 items-center text-slate-100 max-xl:text-[10px]"><img src="./assest/Check.svg"
+                class="w-4" alt=""> Advance Personification</li>
+            <li class="flex gap-3 items-center text-slate-100 max-xl:text-[10px]"><img src="./assest/Check.svg"
+                class="w-4" alt=""> Enhanced Security</li>
+          </ul>
+          <button class="px-3 py-2 rounded-lg bg-white mt-5 font-bold hover:bg-slate-100 max-xl:px-1">Upgrade
+            Now</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- main part  -->
+    <div class="col-span-7 max-lg:col-span-9  max-sm:col-span-12">
+      <!-- nav  -->
+      <div class="w-1/3 p-5 bg-[#FAFAFA] z-20 fixed top-0 left-0 h-full hidden max-sm:block" id="menu">
+        <div class="flex flex-col gap-3 ">
+          <i class="fa-solid fa-xmark text-xl" onclick="toggle()"></i>
+          <div
+            class=" mt-4 flex flex-col gap-2 text-[6px]  ">
+            <a href=""
+            class=" text-slate-100 flex gap-2 items-center justify-start px-5 py-3 bg-[#FF8200] rounded-lg hover:bg-[#E55E00] transition-all"><img
+                src="./assest/SquaresFour.svg" class="w-4  rounded" alt=""> Dashboard</a>
+
+            <a href="" class=" text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/ShoppingCart.svg" alt="" class="w-4"> Orders</a>
+
+            <a href="" class="text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/Icon/Package.svg" alt="" class="w-4"> Products</a>
+
+            <a href="" class="text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/Users.svg" alt="" class="w-4"> Customers</a>
+
+            <a href="" class="text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/Icon/FileText.svg" alt="" class="w-4"> Reports</a>
+
+            <a href="" class=" text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/Icon/Package.svg" alt="" class="w-4"> Discounts</a>
+
+            <div class="border-t-2 border-slate-300"></div>
+
+            <a href="" class=" text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/Icon/Percent.svg" alt="" class="w-4"> Integrations</a>
+
+            <a href="" class=" text-slate-600 flex gap-2 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                src="./assest/Icon/GearSix.svg" alt="" class="w-4"> Settings</a>
+          </div>
+          <div class="mt-2">
+            <div class="p-3 bg-[#FFA547] rounded-lg flex flex-col gap-1 ">
+              <h1 class="text-slate-100 font-bold text-[8px]">Version 4.5
+                is Ready
+              </h1>
+              <ul class="list-none flex flex-col gap-3">
+                <li class="flex gap-2 items-center text-slate-100 max-sm:text-[6px]"><img src="./assest/Check.svg"
+                    class="w-2" alt=""> User friendly UI</li>
+                <li class="flex gap-2 items-center text-slate-100 max-sm:text-[6px]"><img src="./assest/Check.svg"
+                    class="w-2" alt=""> Advance Personification</li>
+                <li class="flex gap-2 items-center text-slate-100 max-sm:text-[6px]"><img src="./assest/Check.svg"
+                    class="w-2" alt=""> Enhanced Security</li>
+              </ul>
+              <button class="rounded-lg bg-white  font-bold hover:bg-slate-100 text-[6px]">Upgrade
+                Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- mobile size nav  -->
+      <div class="max-sm:fixed pt-4 bg-white w-full left-0 top-0 hidden max-sm:block z-10">
+        <div class="flex  pb-5 justify-between mx-3 items-center">
+          <a>
+            <i class="fa-solid fa-bars text-xl" style="color: #000000;" onclick="toggle()"></i>
+          </a>
+          <a href="#">
+            <img src="./assest/Logo.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="max-sm:relative max-sm:top-8">
+        <div class="flex justify-between p-3 ">
+          <h1 class="text-3xl font-bold" id="dashboard">Dashboard</h1>
+          <div class="flex  ">
+            <div class="flex items-center gap-1">
+              <input type="text" name="" id=""
+                class="px-3 border-none outline-none rounded-lg bg-[#FAFAFA] max-sm:hidden"
+                placeholder="Search stock,order,etc">
+              <img src="./assest/MagnifyingGlass.svg" class="w-6 p-1 rounded-full" alt="" id="search">
+            </div>
+            <img src="./assest/User Image/01.svg" alt="" class="hidden rounded-full w-[35px] max-lg:block">
+          </div>
+        </div>
+
+        <!-- content  -->
+        <div class="grid grid-cols-3 gap-2 p-3 max-lg:grid-cols-2">
+
+          <div class="p-3 bg-[#FFEBD6] rounded-lg">
+            <div class="flex justify-between items-center">
+              <p class="text-sm">Total Sales</p>
+              <img src="./assest/Button Icon.svg" alt="">
+            </div>
+            <div class="flex justify-between items-center mt-5">
+              <p class="text-xl font-bold">$983,410</p>
+              <div>
+                <p class="text-xs text-end text-green-500 font-semibold">+20.5%</p>
+                <p class="text-xs">vs last week</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-[#FAFAFA] rounded-lg">
+            <div class="flex justify-between items-center">
+              <p class="text-sm">Total Orders</p>
+              <img src="./assest/ShoppingCart.svg" alt="">
+            </div>
+            <div class="flex justify-between items-center mt-8">
+              <p class="text-xl font-bold">58,375</p>
+              <div>
+                <p class="text-xs text-end text-red-500 font-semibold">-2.89%</p>
+                <p class="text-xs">vs last week</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-[#FAFAFA] rounded-lg">
+            <div class="flex justify-between items-center">
+              <p class="text-sm">Total Visitors</p>
+              <img src="./assest/user.svg" alt="">
+            </div>
+            <div class="flex justify-between items-center mt-5">
+              <p class="text-xl font-bold">58,375</p>
+              <div>
+                <p class="text-xs text-end text-red-500 font-semibold">-2.89%</p>
+                <p class="text-xs">vs last week</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- monthly revenue  -->
+        <div class="grid grid-cols-3 gap-2 px-3 max-lg:grid-cols-1">
+          <!-- Revenue chart  -->
+          <div class="col-span-2 ">
+            <div class="px-3 py-10 bg-[#FAFAFA] rounded-lg ">
+              <div class="flex justify-between items-center mx-3">
+                <h1 class="font-bold">Revenue Analytics</h1>
+                <select class="bg-[#FF8200] border-none outline-none px-3 py-1 rounded-lg text-white font-semibold">
+                  <option class="bg-[#FF8200]" value="">Last 8 Days</option>
+                  <option class="bg-[#FF8200]" value="">Last 5 Days</option>
+                  <option class="bg-[#FF8200]" value="">Last 3 Days</option>
+                </select>
+              </div>
+              <img src="./assest/Body.svg" style="width: 100%;" alt="" class="max-xl:mt-8">
+            </div>
+          </div>
+
+          <!-- monthly target  -->
+          <div class="p-3 bg-[#FAFAFA] rounded-lg ">
+            <div class="flex justify-between items-center">
+              <h1 class="font-bold ">Monthly Target</h1>
+              <p class="font-bold text-xl">...</p>
+            </div>
+            <div class="flex justify-center items-center mt-5">
+              <img src="./assest/Chart.svg" alt="" style="width: 100%;">
+            </div>
+            <h1 class=" font-bold text-center mt-3">Great Progess! 🎉</h1>
+            <p class="text-sm text-center max-xl:text-xs">Our achievement increased by <span
+                class="text-[#FFA547] font-semibold">$200,000;</span>
+              <br>
+              let's reach 100% next month.
+            </p>
+
+            <div class="flex gap-2 justify-between items-center mt-4">
+              <button class="p-3 max-xl:p-1 bg-[#FFEBD6] rounded-lg w-1/2">
+                <h1 class="text-slate-600">Target</h1>
+                <p class=" font-semibold">$600,000</p>
+              </button>
+              <button class="p-3 max-xl:p-1 bg-[#FFEBD6] rounded-lg w-1/2">
+                <h1 class="text-slate-600">Revenue</h1>
+                <p class=" font-semibold ">$510,000</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- active user  -->
+        <div class="grid grid-cols-3 gap-2 p-3 max-lg:grid-cols-2">
+
+          <div class="p-3 bg-[#FAFAFA] rounded-lg">
+            <div class="flex justify-between items-center">
+              <h1 class="font-bold ">Active User</h1>
+              <p class="font-bold text-xl">...</p>
+            </div>
+            <div class="flex justify-between items-center mt-3">
+              <h1 class="text-2xl font-bold max-lg:text-xl max-sm:text-lg">2,758</h1>
+              <p class="bg-green-100 text-green-600 px-1 rounded-lg">+8.02%</p>
+            </div>
+            <div class="flex justify-between items-center my-3">
+              <p class="text-xs text-slate-500">Users</p>
+              <p class="text-xs text-slate-500">from last month</p>
+            </div>
+            <img src="./assest/List Country.svg" style="width: 100%;" class="mb-3" alt="">
+          </div>
+
+          <div class="p-3 bg-[#FAFAFA] rounded-lg col-span-2">
+            <div class="flex justify-between items-center">
+              <h1 class="font-bold ">Convertion Rate</h1>
+              <button class="px-3 py-0.5 font-semibold bg-[#FF8200] rounded-lg text-white">This Week</button>
+            </div>
+
+            <div class="grid grid-cols-5 divide-y divide-dashed max-md:grid-cols-2">
+
+              <div class="flex flex-col mt-3 gap-3">
+                <p class="text-xs text-slate-500">product <br>Views</p>
+                <h1 class="text-xl font-bold">25,000</h1>
+                <span class="bg-green-100 text-green-600 px-1 rounded-lg w-[50px]">+9%</span>
+              </div>
+
+              <div class="flex flex-col mt-3 gap-3">
+                <p class="text-xs text-slate-500">Add to <br>Cart</p>
+                <h1 class="text-xl font-bold">12,000</h1>
+                <span class="bg-green-100 text-green-600 px-1 rounded-lg w-[50px]">+6%</span>
+              </div>
+
+              <div class="flex flex-col mt-3 gap-3">
+                <p class="text-xs text-slate-500">Proceed to <br>Checkout</p>
+                <h1 class="text-xl font-bold">8,500</h1>
+                <span class="bg-green-100 text-green-600 px-1 rounded-lg w-[50px]">+4%</span>
+              </div>
+
+              <div class="flex flex-col mt-3 gap-3">
+                <p class="text-xs text-slate-500">Completed <br>Purchases</p>
+                <h1 class="text-xl font-bold">6,200</h1>
+                <span class="bg-green-100 text-green-600 px-1 rounded-lg w-[50px]">+7%</span>
+              </div>
+
+              <div class="flex flex-col mt-3 gap-3">
+                <p class="text-xs text-slate-500">Abandoned <br>Carts</p>
+                <h1 class="text-xl font-bold">3,000</h1>
+                <span class="bg-red-100 text-red-600 px-1 rounded-lg w-[50px]">-5%</span>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <img src="./assest/Chart Area.svg" alt="" style="width: 100%;">
+            </div>
+          </div>
+        </div>
+
+        <!-- recent order  -->
+        <div class="mx-3 p-3 bg-[#FAFAFA] rounded-lg">
+          <div class="flex justify-between items-center">
+            <h1 class="font-bold">Recent Orders</h1>
+            <div class="flex items-center">
+              <img src="./assest/MagnifyingGlass.svg" alt="">
+              <input type="text" name="" id=""
+                class="px-3 py-1 border-none outline-none rounded-lg bg-[#ffff] max-sm:hidden"
+                placeholder="Search stock,order,etc">
+              <button class="px-3 py-0.5 font-semibold bg-[#FF8200] rounded-lg text-white max-sm:hidden">All
+                Categories</button>
+            </div>
+          </div>
+
+          <!-- table  -->
+          <div class="bg-[#FAFAFA] rounded-lg p-3 my-3">
+            <table class="table-auto w-full mt-3">
+              <thead>
+                <tr class="bg-[#FFEBD6]">
+                  <th class="text-left text-xs text-slate-500">No</th>
+                  <th class="text-left text-xs text-slate-500">Order ID</th>
+                  <th class="text-left text-xs text-slate-500">Customer</th>
+                  <th class="text-left text-xs text-slate-500">Products</th>
+                  <th class="text-left text-xs text-slate-500">Qty</th>
+                  <th class="text-left text-xs text-slate-500">Total</th>
+                  <th class="text-left text-xs text-slate-500 max-sm:hidden">Status</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-dashed">
+                <tr>
+                  <td class="text-left text-xs text-slate-500">1</td>
+                  <td class="text-left text-xs text-slate-500">#102345</td>
+                  <td class="text-left text-xs text-slate-500">Amaya Weller </td>
+                  <td class="text-left text-xs text-slate-500 flex items-center gap-2"><img
+                      src="./assest/Image Product/01.svg" class="rounded-full" alt="one product">
+                    <p class="max-sm:hidden">Wireless Headphones</p>
+                  </td>
+                  <td class="text-left text-xs text-slate-500">2</td>
+                  <td class="text-left text-xs text-slate-500">$100</td>
+                  <td class="text-left text-xs text-slate-500 max-sm:hidden">
+                    <button class="px-1 py-0.5 bg-[#FFEBD6] rounded-lg"><span
+                        class="text-[#FF8200] font-semibold ">&#8226</span> Shipped</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-left text-xs text-slate-500">2</td>
+                  <td class="text-left text-xs text-slate-500">#102346</td>
+                  <td class="text-left text-xs text-slate-500">Sebastian Adams </td>
+                  <td class="text-left text-xs text-slate-500 flex items-center gap-2"><img
+                      src="./assest/Image Product/02.svg" class="rounded-full" alt="two product">
+                    <p class="max-sm:hidden">Running Shoes</p>
+                  </td>
+                  <td class="text-left text-xs text-slate-500">1</td>
+                  <td class="text-left text-xs text-slate-500">$75</td>
+                  <td class="text-left text-xs text-slate-500 max-sm:hidden">
+                    <button class="px-1 py-0.5 bg-[#FFF7F0] rounded-lg"><span
+                        class="text-[#FFB466] font-semibold ">&#8226</span> Processing </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-left text-xs text-slate-500">3</td>
+                  <td class="text-left text-xs text-slate-500">#102347</td>
+                  <td class="text-left text-xs text-slate-500">Suzanne Bright </td>
+                  <td class="text-left text-xs text-slate-500 flex items-center gap-2"><img
+                      src="./assest/Image Product/03.svg" class="rounded-full" alt="two product">
+                    <p class="max-sm:hidden">Smartwatch </p>
+                  </td>
+                  <td class="text-left text-xs text-slate-500">1</td>
+                  <td class="text-left text-xs text-slate-500">$150</td>
+                  <td class="text-left text-xs text-slate-500 max-sm:hidden">
+                    <button class="px-1 py-0.5 bg-[#E0F5EC] rounded-lg"><span
+                        class="text-[#0FB271] font-semibold ">&#8226</span> Delivered </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-left text-xs text-slate-500">4</td>
+                  <td class="text-left text-xs text-slate-500">#102348</td>
+                  <td class="text-left text-xs text-slate-500">Peter Howl </td>
+                  <td class="text-left text-xs text-slate-500 flex items-center gap-2"><img
+                      src="./assest/Image Product/04.svg" class="rounded-full" alt="two product">
+                    <p class="max-sm:hidden">Smartwatch </p>
+                  </td>
+                  <td class="text-left text-xs text-slate-500">1</td>
+                  <td class="text-left text-xs text-slate-500">$60</td>
+                  <td class="text-left text-xs text-slate-500 max-sm:hidden">
+                    <button class="px-1 py-0.5 bg-[#FFE5E9] rounded-lg"><span
+                        class="text-[#FF002E] font-semibold ">&#8226</span> Pending </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-left text-xs text-slate-500">5</td>
+                  <td class="text-left text-xs text-slate-500">#102349</td>
+                  <td class="text-left text-xs text-slate-500">Anita Singh </td>
+                  <td class="text-left text-xs text-slate-500 flex items-center gap-2"><img
+                      src="./assest/Image Product/05.svg" class="rounded-full" alt="two product">
+                    <p class="max-sm:hidden">Bluetooth Speaker </p>
+                  </td>
+                  <td class="text-left text-xs text-slate-500">3</td>
+                  <td class="text-left text-xs text-slate-500">$90</td>
+                  <td class="text-left text-xs text-slate-500 max-sm:hidden">
+                    <button class="px-1 py-0.5 bg-[#FFEBD6] rounded-lg"><span
+                        class="text-[#FF8200] font-semibold ">&#8226</span> Shipped</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="flex justify-between mx-3 py-2 max-sm:flex-col-reverse max-sm:items-center mb-4">
+            <ul class="flex gap-3 text-sm max-lg:text-[8px] my-4">
+              <li class="font-thin ">Copyright © 2024 EzMart</li>
+              <li class="font-thin ">Privacy Policy</li>
+              <li class="font-thin ">Term and conditions</li>
+              <li class="font-thin ">Contact</li>
+            </ul>
+  
+            <ul class="hidden gap-2 max-lg:flex">
+              <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/FacebookLogo.svg" alt=""></li>
+              <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/InstagramLogo.svg" alt=""></li>
+              <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/LinkedinLogo.svg" alt=""></li>
+              <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/TwitterLogo.svg" alt=""></li>
+              <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/YoutubeLogo.svg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- right side part  -->
+    <div class="bg-[#fff] col-span-3 max-lg:hidden p-2 rounded-lg">
+
+      <div class="justify-around flex">
+        <img src="./assest/message.svg" alt="message icon">
+        <img src="./assest/reminder.svg" alt="reminder icon">
+        <div class="flex items-center gap-2">
+          <img src="./assest/User Image/01.svg" alt="user" class="rounded-xl">
+          <div>
+            <h1 class="font-bold">Marcus George</h1>
+            <p class="text-xs">Admin</p>
+          </div>
+        </div>
+      </div>
+      <!-- Categories  -->
+      <div class="bg-[#FAFAFA] p-3 mt-2 rounded-lg">
+        <div class="flex justify-between items-center">
+          <h1 class="font-bold">Top Categories</h1>
+          <p class="text-sm">See All</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="./assest//categories.svg" alt="categories chart" style="width: 79%;">
+        </div>
+        <ul>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FF8200]  rounded-lg">&#9724;</span>Electronics</p>
+            <p class=" font-bold">$1,200,000</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFB466]  rounded-lg">&#9724;</span>Fashion</p>
+            <p class=" font-bold">$950,000</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFD2A3]  rounded-lg">&#9724;</span>Home & Kitchen</p>
+            <p class=" font-bold">$750,000</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFE1C2]  rounded-lg">&#9724;</span>Beauty & Personal Care</p>
+            <p class=" font-bold ">$500,000</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Traffic Sources  -->
+      <div class="bg-[#FAFAFA] p-3 mt-3 rounded-lg">
+        <div class="flex justify-between items-center">
+          <h1 class="font-bold">Traffic Sources</h1>
+          <p class="text-sm">...</p>
+        </div>
+        <div class="grid grid-cols-12 gap-1 mt-5">
+          <div class="col-span-5 rounded  py-6 bg-[#FFEBD6]"></div>
+          <div class="col-span-3 rounded  py-6 bg-[#FFE1C2]"></div>
+          <div class="col-span-2 rounded  py-6 bg-[#FFD2A3]"></div>
+          <div class="col-span-1 rounded  py-6 bg-[#FFB466]"></div>
+          <div class="col-span-1 rounded  py-6 bg-[#FF8200]"></div>
+        </div>
+        <ul class="my-4 flex flex-col
+          gap-2">
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFEBD6]  rounded-lg">&#9724;</span>Direct Traffic</p>
+            <p class=" font-bold">40%</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFE1C2]  rounded-lg">&#9724;</span>Organic Search</p>
+            <p class=" font-bold">30%</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFD2A3]  rounded-lg">&#9724;</span>Social Media</p>
+            <p class=" font-bold">15%</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FFB466]  rounded-lg">&#9724;</span>Referral Traffic</p>
+            <p class=" font-bold ">10%</p>
+          </li>
+          <li class="flex justify-between items-center mt-3">
+            <p class="text-sm text-slate-500 flex items-center gap-1"><span
+                class="text-[#FF8200]  rounded-lg">&#9724;</span>Email Campaigns</p>
+            <p class=" font-bold ">10%</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="bg-[#FFF7F0] p-3 mt-3 rounded-lg">
+        <div class="flex justify-between items-center">
+          <h1 class="font-bold">Recent Activity</h1>
+          <p class="text-sm">...</p>
+        </div>
+        <ul class="py-5">
+          <li class="flex justify-start items-top gap-5 ">
+            <img src="./assest/right-down-corner/Left Side.svg" alt="icons" style="width: 7%;">
+            <div class="flex flex-col gap-2">
+              <p class="text-sm tracking-wide">Maureen Steel purchased 2 items totaling $120.</p>
+              <p class="text-xs text-slate-500">10.30 AM</p>
+            </div>
+          </li>
+          <li class="flex justify-start items-top gap-5 ">
+            <img src="./assest/right-down-corner/Left Side-1.svg" alt="icons" style="width: 7%;">
+            <div class="flex flex-col gap-2">
+              <p class="text-sm tracking-wide">The price of "Smart TV" was updated from $500 to $450.</p>
+              <p class="text-xs text-slate-500">9:45 AM</p>
+            </div>
+          </li>
+          <li class="flex justify-start items-top gap-5 ">
+            <img src="./assest/right-down-corner/Left Side-2.svg" alt="icons" style="width: 7%;">
+            <div class="flex flex-col gap-2">
+              <p class="text-sm tracking-wide">Vincent Laurent left a 5-star review for "Wireless Headphones."</p>
+              <p class="text-xs text-slate-500">8:20 AM</p>
+            </div>
+          </li>
+          <li class="flex justify-start items-top gap-5 ">
+            <img src="./assest/right-down-corner/Left Side-3.svg" alt="icons" style="width: 7%;">
+            <div class="flex flex-col gap-2">
+              <p class="text-sm tracking-wide">"Running Shoes" stock is below 10 units.</p>
+              <p class="text-xs text-slate-500">7:50 AM</p>
+            </div>
+          </li>
+          <li class="flex justify-start items-top gap-5 ">
+            <img src="./assest/right-down-corner/Left Side-4.svg" alt="icons" style="width: 7%;">
+            <div class="flex flex-col gap-2">
+              <p class="text-sm tracking-wide">Damian Ugo's order status changed from "Pending" to "Processing."</p>
+              <p class="text-xs text-slate-500">7:00 AM</p>
+            </div>
+          </li>
+        </ul>
+      </div> 
+
+      <div>
+        <ul class=" flex justify-end gap-3 mx-3 py-2">
+          <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/FacebookLogo.svg" alt=""></li>
+          <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/InstagramLogo.svg" alt=""></li>
+          <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/LinkedinLogo.svg" alt=""></li>
+          <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/TwitterLogo.svg" alt=""></li>
+          <li><img src="./assest/EzMart - E-Commerce Admin Dashboard (2)/YoutubeLogo.svg" alt=""></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
