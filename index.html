@@ -32,7 +32,7 @@
 <body style=" font-family: Manrope, sans-serif;" id="body">
   <div class="grid grid-cols-12 gap-4 p-3 justify-center">
     <!-- aside part  -->
-    <div class="bg-[#FAFAFA] rounded col-span-2 max-lg:col-span-3 top-0 bottom-0 overflow-y-scroll fixed hide-scrollbar left-6 max-lg:left-0" id="aside">
+    <div class="bg-[#FAFAFA] rounded col-span-2 max-lg:col-span-3 top-0 bottom-0 overflow-y-scroll fixed hide-scrollbar left-0 max-lg:left-6 max-xl:left-0 max-md:left-0 " id="aside">
       <div class="flex justify-center mt-5 max-sm:hidden items-end" >
         <img src="./assest/Logo.svg" class="w-10" alt="">
         <h1 class="text-2xl font-bold ml-3" id="title">EzMart</h1>
@@ -58,6 +58,8 @@
 
         <a href="" class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
             src="./assest/Icon/Percent.svg" alt="" class="w-6"> Discounts</a>
+        <a href="./chart.html" class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+            src="./assest/chat.svg" alt="" class="w-6"> Chat</a>
 
         <div class="border-t-2 border-slate-300"></div>
 
@@ -184,11 +186,11 @@
         <div class="flex justify-between p-3 ma">
           <h1 class="text-3xl font-bold" id="dashboard">Dashboard</h1>
           <div class="flex  ">
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-1 justify-center">
               <input type="text" name="" id=""
-                class="px-3 border-none outline-none rounded-lg bg-[#FAFAFA] max-sm:hidden"
+                class="px-3 border-none outline-none rounded-lg bg-[#FAFAFA] max-sm:hidden max-md:w-1/2"
                 placeholder="Search stock,order,etc">
-              <img src="./assest/MagnifyingGlass.svg" class="w-6 p-1 rounded-full" alt="" id="search">
+              <img src="./assest/MagnifyingGlass.svg" class="w-6 p-1 rounded-full " alt="" id="search">
             </div>
             <img src="./assest/User Image/01.svg" alt="" class="hidden rounded-full w-[35px] max-lg:block">
           </div>
@@ -211,7 +213,7 @@
             </div>
           </div>
 
-          <div class="p-3 bg-[#FAFAFA] rounded-lg " id="card">
+          <div class="p-3 bg-[#FAFAFA] rounded-lg  najas" id="card">
             <div class="flex justify-between items-center">
               <p class="text-sm">Total Orders</p>
               <img src="./assest/ShoppingCart.svg" alt="">
@@ -225,7 +227,7 @@
             </div>
           </div>
 
-          <div class="p-3 bg-[#FAFAFA] rounded-lg" id="card2">
+          <div class="p-3 bg-[#FAFAFA] rounded-lg najas" id="card2">
             <div class="flex justify-between items-center">
               <p class="text-sm">Total Visitors</p>
               <img src="./assest/user.svg" alt="">
@@ -240,10 +242,10 @@
           </div>
         </div>
         <!-- monthly revenue  -->
-        <div class="grid grid-cols-3 gap-2 px-3 max-lg:grid-cols-1">
+        <div class="grid grid-cols-3 gap-2 px-3 max-lg:grid-cols-2">
           <!-- Revenue chart  -->
           <div class="col-span-2 ">
-            <div class="px-3 py-3 bg-[#FAFAFA] rounded-lg flex flex-col gap-4" id="card3">
+            <div class="p-3  bg-[#FAFAFA] rounded-lg flex flex-col gap-14" id="card3">
               <div class="flex justify-between items-center mx-3">
                 <h1 class="font-bold">Revenue Analytics</h1>
                 <select class="bg-[#FF8200] border-none outline-none p-1 rounded-lg text-white font-semibold">
@@ -252,42 +254,47 @@
                   <option class="bg-[#FF8200]" value="">Last 3 Days</option>
                 </select>
               </div>
-              <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+              <div>
+                <canvas id="myChart" style="width:100%;max-width:700px;" ></canvas>
+              </div>
             </div>
           </div>
 
           <!-- monthly target  -->
-          <div class="p-3 bg-[#FAFAFA] rounded-lg ">
+          <div class="p-3 bg-[#FAFAFA] rounded-lg flex flex-col justify-between max-lg:col-span-2" id="card4">
             <div class="flex justify-between items-center">
               <h1 class="font-bold ">Monthly Target</h1>
               <p class="font-bold text-xl">...</p>
             </div>
-            <div class="flex justify-center items-center mt-5">
-              <img src="./assest/Chart.svg" alt="" style="width: 100%;">
+            <div>
+              <div class="flex justify-center items-center mt-5 p-1 bg-[#FFEBD6] rounded-lg">
+                <img src="./assest/Chart.svg" alt="" style="width: 100%;">
+              </div>
+              <p class=" font-bold text-center mt-3">Great Progess! 🎉</p>
+              <p class="text-sm text-center max-xl:text-xs">Our achievement increased by <span
+                  class="text-[#FFA547] font-semibold">$200,000;</span>
+                <br>
+                let's reach 100% next month.
+              </p>
             </div>
-            <h1 class=" font-bold text-center mt-3">Great Progess! 🎉</h1>
-            <p class="text-sm text-center max-xl:text-xs">Our achievement increased by <span
-                class="text-[#FFA547] font-semibold">$200,000;</span>
-              <br>
-              let's reach 100% next month.
-            </p>
 
-            <div class="flex gap-2 justify-between items-center mt-4">
+            <div class="flex gap-2 justify-between items-center mt-4" >
               <button class="p-3 max-xl:p-1 bg-[#FFEBD6] rounded-lg w-1/2">
                 <h1 class="text-slate-600">Target</h1>
-                <p class=" font-semibold">$600,000</p>
+                <p class=" font-semibold" id="target">$600,000</p>
               </button>
               <button class="p-3 max-xl:p-1 bg-[#FFEBD6] rounded-lg w-1/2">
                 <h1 class="text-slate-600">Revenue</h1>
-                <p class=" font-semibold ">$510,000</p>
+                <p class=" font-semibold " id="revenue">$510,000</p>
               </button>
             </div>
           </div>
+         
         </div>
         <!-- active user  -->
         <div class="grid grid-cols-3 gap-2 p-3 max-lg:grid-cols-2">
 
-          <div class="p-3 bg-[#FAFAFA] rounded-lg">
+          <div class="p-3 bg-[#FAFAFA] rounded-lg max-lg:col-span-2" id="card5">
             <div class="flex justify-between items-center">
               <h1 class="font-bold ">Active User</h1>
               <p class="font-bold text-xl">...</p>
@@ -303,13 +310,13 @@
             <img src="./assest/List Country.svg" style="width: 100%;" class="mb-3" alt="">
           </div>
 
-          <div class="p-3 bg-[#FAFAFA] rounded-lg col-span-2">
-            <div class="flex justify-between items-center">
+          <div class="p-3 bg-[#FAFAFA] rounded-lg col-span-2" id="card6">
+            <div class="flex justify-between items-center" >
               <h1 class="font-bold ">Convertion Rate</h1>
               <button class="px-3 py-0.5 font-semibold bg-[#FF8200] rounded-lg text-white">This Week</button>
             </div>
 
-            <div class="grid grid-cols-5 divide-y divide-dashed max-md:grid-cols-2">
+            <div class="grid grid-cols-5 max-md:grid-cols-2">
 
               <div class="flex flex-col mt-3 gap-3">
                 <p class="text-xs text-slate-500">product <br>Views</p>
@@ -349,10 +356,10 @@
         </div>
 
         <!-- recent order  -->
-        <div class="mx-3 p-3 bg-[#FAFAFA] rounded-lg">
+        <div class="mx-3 p-3 bg-[#FAFAFA] rounded-lg flex flex-col justify-between" id="card7">
           <div class="flex justify-between items-center">
             <h1 class="font-bold">Recent Orders</h1>
-            <div class="flex items-center">
+            <div class="flex items-center gap-3">
               <img src="./assest/MagnifyingGlass.svg" alt="">
               <input type="text" name="" id=""
                 class="px-3 py-1 border-none outline-none rounded-lg bg-[#ffff] max-sm:hidden"
@@ -363,7 +370,7 @@
           </div>
 
           <!-- table  -->
-          <div class="bg-[#FAFAFA] rounded-lg p-3 my-3">
+          <div class=" rounded-lg p-3 my-3">
             <table class="table-auto w-full mt-3">
               <thead>
                 <tr class="bg-[#FFEBD6]">
@@ -483,27 +490,31 @@
     </div>
 
     <!-- right side part  -->
-    <div class="bg-[#fff] col-span-3 max-lg:hidden p-2 rounded-lg fixed right-10 w-1/6 overflow-y-scroll top-3 bottom-0 overflow-x-hidden hide-scrollbar">
+    <div class="bg-[#fff] col-span-3 max-lg:hidden p-2 rounded-lg fixed right-10 w-1/6 overflow-y-scroll top-3 bottom-0 overflow-x-hidden hide-scrollbar" id="right">
 
-      <div class="justify-around flex">
+      <div class="justify-around flex mb-7">
         <img src="./assest/message.svg" alt="message icon">
         <img src="./assest/reminder.svg" alt="reminder icon">
         <div class="flex items-center gap-2">
-          <img src="./assest/User Image/01.svg" alt="user" class="rounded-xl">
-          <div>
-            <h1 class="font-bold">Marcus George</h1>
+          <img src="./assest/User Image/01.svg" alt="user" class="rounded-xl" style="width: 30px;">
+          <div >
+            <h1 class="font-bold text-xs">Marcus George</h1>
             <p class="text-xs">Admin</p>
           </div>
         </div>
       </div>
       <!-- Categories  -->
-      <div class="bg-[#FAFAFA] p-3 mt-2 rounded-lg">
+      <div class="bg-[#FAFAFA] p-3 mt-2 rounded-lg" id="card8">
         <div class="flex justify-between items-center">
           <h1 class="font-bold">Top Categories</h1>
           <p class="text-sm">See All</p>
         </div>
-        <div class="flex justify-center">
-          <img src="./assest//categories.svg" alt="categories chart" style="width: 79%;">
+        <div class="flex relative flex-col items-center">
+          <img src="./assest/categories.svg" alt="categories chart" style="width: 79%;">
+          <div class="absolute  h-full flex flex-col items-center justify-center">
+            <p class="text-sm text-slate-500">Total Sales</p>
+            <p class="font-bold ">$3,400,000</p>
+          </div>
         </div>
         <ul>
           <li class="flex justify-between items-center mt-3">
@@ -530,7 +541,7 @@
       </div>
 
       <!-- Traffic Sources  -->
-      <div class="bg-[#FAFAFA] p-3 mt-3 rounded-lg">
+      <div class="bg-[#FAFAFA] p-3 mt-3 rounded-lg" id="card9">
         <div class="flex justify-between items-center">
           <h1 class="font-bold">Traffic Sources</h1>
           <p class="text-sm">...</p>
@@ -573,7 +584,7 @@
       </div>
 
       <!-- Recent Activity -->
-      <div class="bg-[#FFF7F0] p-3 mt-3 rounded-lg">
+      <div class="bg-[#FFF7F0] p-3 mt-3 rounded-lg" id="card10">
         <div class="flex justify-between items-center">
           <h1 class="font-bold">Recent Activity</h1>
           <p class="text-sm">...</p>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-- font aswesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- tailwindcss  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- cdn for chart.js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    },
+
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style=" font-family: Manrope, sans-serif;" id="body">
+    <div class="grid grid-cols-12 gap-4 p-3 justify-center">
+        <!-- aside part  -->
+        <div class="bg-[#FAFAFA] rounded col-span-2 max-lg:col-span-3 top-0 bottom-0 overflow-y-scroll fixed hide-scrollbar left-0  max-xl:left-0 max-md:left-0 "
+            id="aside">
+            <div class="flex justify-center mt-5 max-sm:hidden items-end">
+                <img src="./assest/Logo.svg" class="w-10" alt="">
+                <h1 class="text-2xl font-bold ml-3" id="title">EzMart</h1>
+            </div>
+
+            <div class="p-3 mt-4 mx-3 flex flex-col gap-3 max-xl:mx-0 max-xl:text-sm max-lg:text-xs max-md:text-[10px] max-sm:hidden"
+                id="aside">
+                <a href="./index.html"
+                    class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100 "><img
+                        src="./assest/SquaresFour.svg" class="w-6  rounded" alt=""> Dashboard</a>
+
+                <a href=""
+                    class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/ShoppingCart.svg" alt="" class="w-6"> Orders</a>
+
+                <a href=""
+                    class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Icon/Package.svg" alt="" class="w-6"> Products</a>
+
+                <a href=""
+                    class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Users.svg" alt="" class="w-6"> Customers</a>
+
+                <a href=""
+                    class="text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Icon/FileText.svg" alt="" class="w-6"> Reports</a>
+
+                <a href=""
+                    class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Icon/Percent.svg" alt="" class="w-6"> Discounts</a>
+                <a href="chart.html"
+                    class=" text-slate-100 flex gap-4 items-center justify-start px-5 py-3 bg-[#FF8200] rounded-lg hover:bg-[#E55E00] transition-all"><img
+                        src="./assest/chat.svg" alt="" class="w-6"> Chat</a>
+
+                <div class="border-t-2 border-slate-300"></div>
+
+                <a href=""
+                    class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Icon/Link.svg" alt="" class="w-6"> Integrations</a>
+
+                <a href=""
+                    class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Icon/Question.svg" alt="" class="w-6"> Help</a>
+
+                <a href=""
+                    class=" text-slate-600 flex gap-4 items-center justify-start px-5 py-3 hover:bg-slate-100"><img
+                        src="./assest/Icon/GearSix.svg" alt="" class="w-6"> Settings</a>
+            </div>
+
+            <div class="mx-3 p-3 bg-[#FAFAFA] rounded flex items-center gap-3 max-sm:hidden" id="darkMode">
+                <span class="ml-3 text-sm font-medium text-slate-700">Theme Mode</span>
+
+                <label class="inline-flex items-center cursor-pointer" id="darkMode">
+                    <input type="checkbox" value="" class="sr-only peer" onclick="darkMode()">
+                    <div id="darkMode"
+                        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                    </div>
+                </label>
+
+            </div>
+
+            <div class="p-3 mt-4 mx-2 max-xl:p-0 max-sm:hidden ">
+                <div
+                    class="p-3 bg-[#FFA547] rounded-lg flex flex-col gap-3 max-xl:mx-0 max-xl:text-sm  border-orange-950">
+                    <h1 class="text-slate-100 font-bold text-3xl max-xl:text-xl">Version 4.5
+                        <br>
+                        is Ready
+                    </h1>
+                    <ul class="list-none">
+                        <li class="flex gap-3 items-center text-slate-100 max-xl:text-[10px]"><img
+                                src="./assest/Check.svg" class="w-4" alt=""> User friendly UI</li>
+                        <li class="flex gap-3 items-center text-slate-100 max-xl:text-[10px]"><img
+                                src="./assest/Check.svg" class="w-4" alt=""> Advance Personification</li>
+                        <li class="flex gap-3 items-center text-slate-100 max-xl:text-[10px]"><img
+                                src="./assest/Check.svg" class="w-4" alt=""> Enhanced Security</li>
+                    </ul>
+                    <button class="px-3 py-2 rounded-lg bg-white mt-5 font-bold hover:bg-slate-100 max-xl:px-1">Upgrade
+                        Now</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- main part  -->
+         <div class="col-span-1 "></div>
+
+        <div class="col-span-9 bg-[#FAFAFA] p-5 relative  left-[20%]   max-md:left-1/3 rounded-lg h-auto max-sm:left-5 max-sm:col-span-10"
+            id="main">
+            <div class="flex flex-col justify-between  h-full ">
+                <div>
+                    <h1 class="text-4xl font-bold  " id="target">Chat</h1>
+                    <div id="animal-list" class="space-y-4"></div>
+                <div class="absolute bg-slate-100 flex justify-center w-full bottom-0" >
+                    <div class="fixed bottom-8 bg-[#FAFAFA]  p-5 gap-6 rounded-lg flex justify-between w-[60%]" id="search">
+                        <input type="text" class="bg-gray-600 text-white w-full rounded-lg outline-none px-2" placeholder="Message" id="animalInput">
+                         <button class="inline-flex items-center rounded-md bg-[#FF8200] px-3 py-2 text-sm font-semibold text-gray-900  hover:bg-[#ffa443cc] transition-all" onclick="animalSearch()">Submit</button>
+                        </div>
+                </div>
+                </div>
+
+                <!-- <div class="fixed bottom-16 w-full ">
+
+                    <form class="max-w-md mx-auto">
+                        <label for="default-search"
+                            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="default-search"
+                                class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
+                                placeholder="Search Mockups, Logos..." required />
+                            <button type="submit"
+                                class="text-white absolute end-2.5 bottom-2.5  rounded-lg text-sm px-4 py-2 bg-[#FFA547]">Search</button>
+                        </div>
+                    </form>
+
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="./script1.js"></script>
+</body>
+
+</html>
